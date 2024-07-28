@@ -24,7 +24,7 @@ StartLimitBurst={{ caddy_systemd_restart_startlimitburst }}
 
 ; User and group the process will run as.
 User={{ caddy_user }}
-Group={{ caddy_user }}
+Group={{ caddy_group | default(caddy_user) }}
 
 ; Letsencrypt-issued certificates will be written to this directory.
 Environment=CADDYPATH={{ caddy_certs_dir }}

@@ -19,6 +19,7 @@
     createhome: true
     home: "{{ caddy_home }}"
   register: caddy_user_details
+  when: caddy_create_user|bool
 
 - name: Build headers to use when making requests to github
   ansible.builtin.set_fact:
